@@ -4,26 +4,32 @@
 
 ## Version
 
-**4.0.2**
+**4.0.3**
+
+## Maintainer
+
+This is a maintained fork of [dapphp/securimage](https://github.com/dapphp/securimage) by **Sofyan Adiyatma** ([@adythree](https://github.com/adythree)).
+
+The original package was abandoned. This fork adds PHP 8.3 compatibility fixes and will continue to receive maintenance updates.
+
+- Packagist: [adythree/securimage](https://packagist.org/packages/adythree/securimage)
+- Contact: sofyan.adiyatma@gmail.com
+
+## Changes from original
+
+- **v4.0.3** — PHP 8.3 compatibility: replace deprecated `resource` type hints with `GdImage`, add missing protected properties (`$gdnoisecolor`, `$code_entered`, `$correct_code`, `$namespace`)
 
 ## Project Status
 
-Securimage is no longer maintained. Seek an alternative such as [hCaptcha](https://hcaptcha.com/).
+The original `dapphp/securimage` is no longer maintained. Use this fork instead:
 
-You may use, modify, and distribute the code in accordance with the [license](LICENSE.txt).
-
-See the [Project Status](https://github.com/dapphp/securimage/issues/99) issue on GitHub.
-
-## Download
-
-The code will remain available to view and download at https://github.com/dapphp/securimage.
-
-To use or modify the code, start with the 4.0 (nextgen) branch. It has many features and additions so the
-3.6 branch should be considered even more obsolete.
+```
+composer require adythree/securimage
+```
 
 ## Requirements
 
-* PHP 7.0 or greater
+* PHP 7.0 or greater (tested up to PHP 8.3)
 * GD  2.0
 * FreeType (Required, for TTF fonts)
 * PDO (if using Sqlite, MySQL, or PostgreSQL)
