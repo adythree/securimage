@@ -1,5 +1,5 @@
 {
-    "name": "dapphp/securimage",
+    "name": "adythree/securimage",
     "type": "library",
     "description": "PHP CAPTCHA Library",
     "keywords": ["captcha","security","forms","anti-spam"],
