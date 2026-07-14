@@ -1,5 +1,13 @@
 CHANGES
 
+4.0.4
+- PHP 8.3 compatibility: eliminate ALL E_DEPRECATED warnings during captcha generation.
+  * Implicit float->int precision loss: added (int) casts in drawLines (imagefilledrectangle),
+    distortion loop (imagecolorat per-pixel), pole placement (% modulo, mt_rand float args),
+    signature box (imagerectangle), and noise (mt_rand float args).
+  * Dynamic property creation deprecated (PHP 8.2): added #[\AllowDynamicProperties] to class.
+  Captcha visual output unchanged; verified 0 deprecation on PHP 8.3 with error_reporting(E_ALL).
+
 4.0.2
 - Merge changes from master branch release 3.6.8
 
