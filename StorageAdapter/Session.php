@@ -19,6 +19,7 @@ class Session implements AdapterInterface
 
     public function store($captchaId, $captchaInfo)
     {
+        $captchaId = (string) $captchaId; // PHP 8.5: null sebagai indeks larik deprecated
         if ((function_exists('session_status') && PHP_SESSION_ACTIVE == session_status()) || session_id() != '') {
             $_SESSION['securimage_data'][$captchaId] = $captchaInfo;
 
@@ -30,6 +31,7 @@ class Session implements AdapterInterface
 
     public function storeAudioData($captchaId, $audioData)
     {
+        $captchaId = (string) $captchaId; // PHP 8.5: null sebagai indeks larik deprecated
         if (isset($_SESSION['securimage_data'][$captchaId]) &&
             $_SESSION['securimage_data'][$captchaId] instanceof \Securimage\CaptchaObject
         ) {
@@ -42,6 +44,7 @@ class Session implements AdapterInterface
 
     public function get($captchaId, $what = null)
     {
+        $captchaId = (string) $captchaId; // PHP 8.5: null sebagai indeks larik deprecated
         if (isset($_SESSION['securimage_data'][$captchaId])) {
             return $_SESSION['securimage_data'][$captchaId];
         }
@@ -51,6 +54,7 @@ class Session implements AdapterInterface
 
     public function delete($captchaId)
     {
+        $captchaId = (string) $captchaId; // PHP 8.5: null sebagai indeks larik deprecated
         unset($_SESSION['securimage_data'][$captchaId]);
 
         return true;
